@@ -17,8 +17,9 @@ steps:
     inputs:
       version: "$(dotnetSdkVersion)"
 
-  - script: "apt-get install -y build-essential"
-    displayName: "build essential"
+  - task: NodeTool@0
+    inputs:
+    versionSpec: "14.x"
 
   - task: Npm@1
     displayName: "Run npm install"
